@@ -104,11 +104,14 @@ namespace API.Controllers
             _beerLibraryRepository.Save();
 
             var beerToReturn = _mapper.Map<BeerDto>(beerEntity);
-            return CreatedAtRoute("GetBeer",
-                new { beerId=beerToReturn.Id},
-                beerToReturn
-                );
-        
+            return Ok(beerToReturn);
+
+            //  beerId
+            //= beerId,
+            //      BeerRatingID = beerRatingToReturn.ID,
+            //      BeerRatingValue = beerRatingToReturn.BeerRatingValue
+            //  }, beerRatingToReturn);
+
         }
 
         [HttpPut("{beerId}")]

@@ -70,14 +70,7 @@ namespace API.Controllers
 
 
             var beerRatingToReturn = _mapper.Map<BeerRatingDto>(beerRatingEntity);
-            return CreatedAtRoute("GetRatingForBeer", new
-            {
-                beerId
-            = beerId,
-                BeerRatingID = beerRatingToReturn.ID,
-                BeerRatingValue= beerRatingToReturn.BeerRatingValue
-            }, beerRatingToReturn);
-
+            return Ok(beerRatingToReturn);
 
 
 
